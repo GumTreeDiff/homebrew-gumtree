@@ -12,7 +12,7 @@ class Gumtree < Formula
 
     (bin/"gumtree").write <<~SH
       #!/bin/sh
-      PATH="#{Formula["openjdk@17"].opt_bin}:${PATH}"
+      PATH="#{formula_opt_bin("openjdk@17")}:${PATH}"
       export PATH
       exec "#{libexec}/gumtree-#{version}/bin/gumtree" "$@"
     SH
